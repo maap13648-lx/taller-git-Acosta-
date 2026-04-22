@@ -24,7 +24,7 @@ comision = 0
 if tipo_cuenta == 2:
     comision = monto * 0.05
 
-totalDebitar = monto + comision
+total_debitar = monto + comision
 
 #---SECCION: DESGlOSE (DIV y MOD)---
 
@@ -41,13 +41,7 @@ cant_10 = resto3  // 10
 
 #---SECCION:SIMBOLOS Y SALIDAD---:)
 
-match tipo_moneda:
-    case 1:
-        simbolo = "Bs."
-        print(f"Retiro en Bolivares")
-    case 2:
-        simbolo = "$"
-        print(f"Retiro en Dolares")
+simbolo = "Bs." if tipo_moneda == 1 else "$"
 
 
 print(f"Billtes de 100: {cant_100}")
@@ -55,5 +49,5 @@ print(f"Billetes de 50: {cant_50}")
 print(f"Billetes de 20: {cant_20}")
 print(f"Billetes de 10: {cant_10}")
 
-print(f"Total debitado: {totalDebitar} {simbolo}")
+print(f"Total debitado: {total_debitar} {simbolo}")
 
