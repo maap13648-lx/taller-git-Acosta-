@@ -1,27 +1,27 @@
 #---SECCION: ENTRADA---
 
-tipoMoneda = int(input("""Tipo de moneda (1: Bs, 2 : $)"""))
-monto = int(input("""Monto a retirar : """))
-tipoCuenta = int(input("""Tipo de cuenta(1 Ahorro, 2 Corriente)"""))
+tipo_moneda = int(input("Tipo de moneda (1: Bs, 2 : $)"))
+monto = int(input("Monto a retirar : "))
+tipo_cuenta = int(input("Tipo de cuenta(1 Ahorro, 2 Corriente)"))
 
 #---SECCION: VALIDACIONES---
 
 if monto % 10 !=0:
-    print(f"""Error: Monto no compatible con denominaciones disponibles""")
+    print(f"Error: Monto no compatible con denominaciones disponibles")
     exit()
     
-elif tipoMoneda == 1 and monto > 10000:
-    print("""Transaccion denegada: Excede limite diario""")
+elif tipo_moneda == 1 and monto > 10000:
+    print("Transaccion denegada: Excede limite diario")
     exit()
     
-elif tipoMoneda == 2 and monto > 500:
-    print("""Transaccion denegada: Excede limite diario""")
+elif tipo_moneda == 2 and monto > 500:
+    print("Transaccion denegada: Excede limite diario")
     exit()
     
 #---SECCION: COMISION---
 
 comision = 0
-if tipoCuenta == 2:
+if tipo_cuenta == 2:
     comision = monto * 0.05
 
 totalDebitar = monto + comision
@@ -41,19 +41,19 @@ cant_10 = resto3  // 10
 
 #---SECCION:SIMBOLOS Y SALIDAD---:)
 
-match tipoMoneda:
+match tipo_moneda:
     case 1:
         simbolo = "Bs."
-        print(f"""Retiro en Bolivares""")
+        print(f"Retiro en Bolivares")
     case 2:
         simbolo = "$"
-        print(f"""Retiro en Dolares""")
+        print(f"Retiro en Dolares")
 
 
-print(f"""Billtes de 100: {cant_100}""")
-print(f"""Billetes de 50: {cant_50}""")
-print(f"""Billetes de 20: {cant_20}""")
-print(f"""Billetes de 10: {cant_10}""")
+print(f"Billtes de 100: {cant_100}")
+print(f"Billetes de 50: {cant_50}")
+print(f"Billetes de 20: {cant_20}")
+print(f"Billetes de 10: {cant_10}")
 
-print(f"""Total debitado: {totalDebitar} {simbolo}""")
+print(f"Total debitado: {totalDebitar} {simbolo}")
 
